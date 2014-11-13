@@ -1,0 +1,26 @@
+<p>
+  <%= render @post.categories %>
+</p>
+
+<%= render 'shared/content_header', title: @post.title %>
+
+<br>
+<p><%= @post.description %></p>
+
+<br>
+<%= render 'shared/content_header', title: "Comments" %>
+
+<p><%= link_to 'Back to all posts', posts_path %><p>
+<br>
+
+<div class="row">
+<% @post.comments.each do |comment| %>
+  <div class="span8 well">
+    <p><em> '<%= comment.body %>' </em></p>
+    <span class="quiet">by</span> <%= comment.creator.username %>
+    <small> at <%= comment.created_at %></small>
+  </div>
+<% end %>
+<div>
+
+<br>
