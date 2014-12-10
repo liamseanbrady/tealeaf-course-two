@@ -35,7 +35,7 @@
     <%= link_to 'New Post', new_post_path, class: 'btn btn-small btn-success' %>
   </div>
   <div class="nav_item">
-    <p>Hi, <%= current_user.username %></p>
+    <p>Hi, <%= current_user.username %> (<%= link_to "Not #{current_user.username}?", logout_path %>)</p>
   </div>
   <div class="btn-group nav_item">
     <%= link_to '#', class: 'btn btn-small dropdown-toggle', 'data-toggle' => 'dropdown' do %>
